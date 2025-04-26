@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jawad | Text Utils</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">JawadTextUtils.com</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact Us</a>
+              </li>
+          </div>
+        </div>
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+      </nav>
+
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Welcome to TextUtils!</strong> You can manipulate your text here!
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <div class="container">
+        <form action="/analyze" method="post">
+          {%csrf_token%}
+        <div class="form-group mb-2">
+            <label for="exampleFormControlTextarea1" class="form-label">Enter your text here and let textutil do the magic for you</label>
+            <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="9"></textarea>
+          </div>
+     
+        <div class="form-check form-switch">
+            <input class="form-check-input"  name="removepunc" type="checkbox" role="switch" id="switchCheckDefault1">
+            <label class="form-check-label" for="switchCheckDefault1">Remove Punctuations</label>
+          </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input"  name="fullcaps" type="checkbox" role="switch" id="switchCheckDefault2">
+            <label class="form-check-label" for="switchCheckDefault2">Capitalize the Text</label>
+          </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input"  name="newlineremover" type="checkbox" role="switch" id="switchCheckDefault3">
+            <label class="form-check-label" for="switchCheckDefault3">New Line Remover</label>
+          </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input"  name="extraspaceremover" type="checkbox" role="switch" id="switchCheckDefault4">
+            <label class="form-check-label" for="switchCheckDefault4">Extra Space Remover</label>
+          </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input"  name="charcount" type="checkbox" role="switch" id="switchCheckDefault5">
+            <label class="form-check-label" for="switchCheckDefault5">Character Counter</label>
+          </div>  
+          <button type="submit" class="btn btn-dark mt-2">Analyze Text</button>
+        </form>
+        </div>
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  </body>
+</html>
